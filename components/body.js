@@ -39,17 +39,9 @@ const initialNewsPortals = [
 ];
 
 
-const demoPlaceholderImage = { uri: 'https://via.placeholder.com/100' };
-
 export default function NewsPortalSelector() {
   const [activeTab, setActiveTab] = useState('For You');
   const [newsPortals, setNewsPortals] = useState(initialNewsPortals);
-
-  const handlePortalPress = (id) => {
-    setNewsPortals(newsPortals.map(portal =>
-      portal.id === id ? { ...portal, selected: !portal.selected } : portal
-    ));
-  };
 
   const changePortalIcon = (id, newLogo) => {
     setNewsPortals(newsPortals.map(portal =>
@@ -79,7 +71,7 @@ export default function NewsPortalSelector() {
           borderWidth: item.selected ? 2 : 0,
           borderColor: item.selected ? '#10b981' : 'transparent',
         }}
-        onPress={() => handlePortalPress(item.id)}
+
         onLongPress={() => {
           const newLogo = Math.random() > 0.5
             ? { uri: 'https://via.placeholder.com/100/ff0000' }
@@ -108,7 +100,7 @@ export default function NewsPortalSelector() {
             <Icon name="filter" size={20} color="#333" />
           </View>
           <Text className="text-gray-700 font-medium mr-1">Filters</Text>
-          
+
         </TouchableOpacity>
 
         <ScrollView horizontal showsHorizontalScrollIndicator={false} className="flex-row">

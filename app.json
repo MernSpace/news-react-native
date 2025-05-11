@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "my-expo-app",
+    "name": "News App",
     "slug": "e-com2",
     "version": "1.0.0",
     "web": {
@@ -28,13 +28,20 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.dev_sifat.ecom2"
     },
     "extra": {
       "eas": {
         "projectId": "0c997138-6e91-42f6-97c8-b357a90f9e55"
       }
     },
-    "owner": "dev_sifat"
+    "owner": "dev_sifat",
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/0c997138-6e91-42f6-97c8-b357a90f9e55"
+    }
   }
 }
