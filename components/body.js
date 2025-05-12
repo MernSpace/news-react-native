@@ -43,53 +43,42 @@ export default function NewsPortalSelector() {
   const [activeTab, setActiveTab] = useState('For You');
   const [newsPortals, setNewsPortals] = useState(initialNewsPortals);
 
-  const changePortalIcon = (id, newLogo) => {
-    setNewsPortals(newsPortals.map(portal =>
-      portal.id === id ? { ...portal, logo: newLogo } : portal
-    ));
-  };
-
+  
   const renderPortalItem = ({ item }) => {
-    const exactItemWidth = (screenWidth - 32 - 16) / 3;
+  const exactItemWidth = (screenWidth - 32 - 16) / 3;
 
-    return (
-      <TouchableOpacity
+  return (
+    <TouchableOpacity
+      style={{
+        backgroundColor: 'white',
+        borderRadius: 12,
+        shadowColor: '#000',
+        shadowOffset: { width: 0, height: 1 },
+        shadowOpacity: 0.1,
+        shadowRadius: 2,
+        elevation: 2,
+        margin: 2.5,
+        padding: 8,
+        width: exactItemWidth,
+        height: exactItemWidth * 0.85,
+        justifyContent: 'center',
+        alignItems: 'center',
+        borderWidth: item.selected ? 2 : 0,
+        borderColor: item.selected ? '#10b981' : 'transparent',
+      }}
+    >
+      <Image
+        source={item.logo || demoPlaceholderImage}
         style={{
-          backgroundColor: 'white',
-          borderRadius: 12,
-          shadowColor: '#000',
-          shadowOffset: { width: 0, height: 1 },
-          shadowOpacity: 0.1,
-          shadowRadius: 2,
-          elevation: 2,
-          margin: 2.5,
-          padding: 8,
-          width: exactItemWidth,
-          height: exactItemWidth * 0.85,
-          justifyContent: 'center',
-          alignItems: 'center',
-          borderWidth: item.selected ? 2 : 0,
-          borderColor: item.selected ? '#10b981' : 'transparent',
+          width: exactItemWidth * 0.75,
+          height: exactItemWidth * 0.45,
+          resizeMode: 'contain',
         }}
+      />
+    </TouchableOpacity>
+  );
+};
 
-        onLongPress={() => {
-          const newLogo = Math.random() > 0.5
-            ? { uri: 'https://via.placeholder.com/100/ff0000' }
-            : { uri: 'https://via.placeholder.com/100/00ff00' };
-          changePortalIcon(item.id, newLogo);
-        }}
-      >
-        <Image
-          source={item.logo || demoPlaceholderImage}
-          style={{
-            width: exactItemWidth * 0.75,
-            height: exactItemWidth * 0.45,
-            resizeMode: 'contain',
-          }}
-        />
-      </TouchableOpacity>
-    );
-  };
 
   return (
     <SafeAreaView className="flex-1 bg-gray-50">
