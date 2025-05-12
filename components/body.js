@@ -96,7 +96,7 @@ export default function NewsPortalSelector() {
           {['For You', 'World', 'Tech'].map((tab) => (
             <TouchableOpacity
               key={tab}
-              className={`px-4 py-1.5 rounded-full mr-2 ${activeTab === tab ? 'bg-green-100' : 'bg-transparent'}`}
+              className={`px-4 py-1.5 rounded-full mr-2 ${activeTab === tab ? 'bg-green-100' : 'bg-green-100'}`}
               onPress={() => setActiveTab(tab)}
             >
               <Text className={`${activeTab === tab ? 'text-green-600' : 'text-gray-600'} font-medium`}>
@@ -110,7 +110,7 @@ export default function NewsPortalSelector() {
       {/* News Portal Grid */}
       <View className="flex-1 px-4 mt-2 pb-6">
         <View className="flex-row justify-between items-center mb-4">
-          <Text className="text-lg font-bold text-gray-800">Select News Portal</Text>
+          <Text className="text-lg  text-gray-600">Select News Portal</Text>
           <TouchableOpacity>
             <Text className="text-green-600 font-medium">See All</Text>
           </TouchableOpacity>

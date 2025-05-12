@@ -23,6 +23,7 @@ const Screen2 = () => {
   return (
     <View style={styles.screen2}>
       {/* Clean content area - no titles */}
+      
     </View>
   );
 };
