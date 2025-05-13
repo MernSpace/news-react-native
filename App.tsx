@@ -1,7 +1,6 @@
 
 import Footer from 'components/footer';
 import Header from 'components/header';
-import Body from 'components/body';
 import './global.css';
 
 import React from 'react';
@@ -13,6 +12,7 @@ export default function App() {
     <SafeAreaView className="flex-1 bg-gray-100">
   
     <Header/>
+
       <Footer/>
     </SafeAreaView>
   );

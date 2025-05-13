@@ -10,6 +10,7 @@ import { CurvedBottomBarExpo } from 'react-native-curved-bottom-bar';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { NavigationContainer } from '@react-navigation/native';
 import NewsPortalSelector from './body'
+import AppStore from './AppStore';
 
 const Screen1 = () => {
   return (
@@ -21,9 +22,10 @@ const Screen1 = () => {
 
 const Screen2 = () => {
   return (
-    <View style={styles.screen2}>
+    <View style={styles.screen1}>
       {/* Clean content area - no titles */}
-      
+
+      <AppStore/>
     </View>
   );
 };
